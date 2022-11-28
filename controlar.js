@@ -136,8 +136,6 @@ let getUserRole = async (req, res) => {
     }
 }
 
-
-
 //filter user with
 // user role 
 const filterAllUserbyRole = async (req, res) => {
