@@ -275,7 +275,7 @@ const deleteUserOrSellerByAdmin = async (req, res) => {
 
     } catch (error) {
         return res.send({
-            status: 404,
+            status: 400,
             message: "Product delete bad request"
         })
     }
