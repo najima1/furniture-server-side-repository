@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Furniture",
+    "category": "furniture",
+    "time": "",
+    "id": 1,
+    "image": "https://i.ibb.co/qJvhxPX/category-2.jpg"
+  },
+  {
+    "name": "Home Décor",
+    "time": "Home_décor",
+    "category": "",
+    "id": 2,
+    "image": "https://i.ibb.co/fYHHp69/category-1.jpg"
+  },
+  {
+    "name": "Lighting",
+    "time": "",
+    "category": "lighting",
+    "id": 3,
+    "image": "https://i.ibb.co/QHLFSwH/category-3.jpg"
+  }
+]
