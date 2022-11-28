@@ -267,6 +267,21 @@ const deleteSellerProduct = async (req, res) => {
     }
 }
 
+const deleteUserOrSellerByAdmin = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const query = { _id: ObjectId(id) }
+
+        const result = await userCollection.deleteOne(query)
+        return res.send(result)
+
+    } catch (error) {
+        return res.send({
+            status: 404,
+            message: "Product delete bad request"
+        })
+    }
+}
 //save user in database with login
 const saveUserInDataBase = async (req, res) => {
     try {
@@ -302,4 +317,4 @@ const saveUserInDataBase = async (req, res) => {
 
 
 
-module.exports = { getCategory, getAllProduct, getSingleProduct, saveUserInDataBase, getSingProductWithId, purchaseOneProduct, deletePurchaseItem, purcheseProduct, getUserRole, addProductBySeller, addProductSellerDifferent, sellerAllProduct, deleteSellerProduct, filterAllUserbyRole }
+module.exports = { getCategory, getAllProduct, getSingleProduct, saveUserInDataBase, getSingProductWithId, purchaseOneProduct, deletePurchaseItem, purcheseProduct, getUserRole, addProductBySeller, addProductSellerDifferent, sellerAllProduct, deleteSellerProduct, filterAllUserbyRole, deleteUserOrSellerByAdmin }

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const express = require("express")
 const app = express()
 const cors = require('cors')
-const { getCategory, getAllProduct, getSingleProduct, saveUserInDataBase, getSingProductWithId, purchaseOneProduct, deletePurchaseItem, purcheseProduct, getUserRole, addProductBySeller, addProductSellerDifferent, sellerAllProduct, deleteSellerProduct, filterAllUserbyRole } = require('./controlar')
+const { getCategory, getAllProduct, getSingleProduct, saveUserInDataBase, getSingProductWithId, purchaseOneProduct, deletePurchaseItem, purcheseProduct, getUserRole, addProductBySeller, addProductSellerDifferent, sellerAllProduct, deleteSellerProduct, filterAllUserbyRole, deleteUserOrSellerByAdmin } = require('./controlar')
 const port = process.env.PORT || 8000
 
 app.use(express.json())
@@ -57,6 +57,11 @@ const run = async () => {
 
     // delete purchase item
     app.delete('/orderProduct/:id', deletePurchaseItem)
+
+    //DELETE USER BY ADMIN
+    //ADMIN CAN BE DELETE USER IF HE WANT
+    app.delete('/deleteUserByAdmin/:id', deleteUserOrSellerByAdmin)
+
 
     app.post('/purchaseOne', purchaseOneProduct)
 
